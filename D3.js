@@ -113,7 +113,7 @@ const characters = [];
 for (let i = 0; i < starWarsCharacters.length; i++) {
   characters.push(starWarsCharacters[i].name);
 }
-//console.log(characters);
+console.log(characters);
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
@@ -124,7 +124,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
     femaleCharacters.push(starWarsCharacters[i]);
   }
 }
-//console.log(femaleCharacters);
+console.log(femaleCharacters);
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
@@ -158,26 +158,16 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
-/*let i = 0;
+let i = 0;
 let crewMass = 0;
-do {
+
+while (i < starWarsCharacters.length);
+{
   i++;
   crewMass = crewMass + starWarsCharacters[i].mass;
-} while (starWarsCharacters[i]);
-console.log(crewMass);*/
-
-let crewMass =
-  starWarsCharacters[0].mass +
-  starWarsCharacters[1].mass +
-  starWarsCharacters[2].mass +
-  starWarsCharacters[3].mass +
-  starWarsCharacters[4].mass +
-  starWarsCharacters[5].mass +
-  starWarsCharacters[6].mass +
-  starWarsCharacters[7].mass +
-  starWarsCharacters[8].mass +
-  starWarsCharacters[9].mass;
+}
 console.log(crewMass);
+//console.log(crewMass);
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
 
@@ -189,17 +179,17 @@ console.log(crewMass);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-if (crewMass > 1000) {
-  console.log("DANGER! OVERLOAD ALERT: escape from ship now!" + " mass:" + crewMass);
-} else if (crewMass > 900) {
-  console.log("Critical Load: Over 900" + " mass:" + crewMass);
-} else if (crewMass > 700) {
-  console.log("Warning: Load is over 700" + " mass:" + crewMass);
-} else if (crewMass > 500) {
-  console.log("Ship is half loaded" + " mass:" + crewMass);
-} else if (crewMass < 500) {
-  console.log("Ship is under loaded" + " mass:" + crewMass);
-}
+// if (crewMass > 1000) {
+//   console.log("DANGER! OVERLOAD ALERT: escape from ship now!" + " mass:" + crewMass);
+// } else if (crewMass > 900) {
+//   console.log("Critical Load: Over 900" + " mass:" + crewMass);
+// } else if (crewMass > 700) {
+//   console.log("Warning: Load is over 700" + " mass:" + crewMass);
+// } else if (crewMass > 500) {
+//   console.log("Ship is half loaded" + " mass:" + crewMass);
+// } else if (crewMass < 500) {
+//   console.log("Ship is under loaded" + " mass:" + crewMass);
+// }
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
@@ -209,16 +199,21 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
     starWarsCharacters[i].gender = "robot";
   }
 }
-console.log(starWarsCharacters);
+//console.log(starWarsCharacters);
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
 for (let i = 0; i < characters.length; i++) {
-  if (characters[i]) {
+  for (let j = 0; j < femaleCharacters.length; j++) {
+    if (characters[i] === femaleCharacters[j].name) {
+      characters.splice(i, 1);
+    }
   }
 }
 console.log(characters);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+let index = parseInt(Math.random() * starWarsCharacters.length);
+console.log(starWarsCharacters[index]);
